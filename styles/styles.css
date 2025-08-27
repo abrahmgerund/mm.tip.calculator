@@ -218,8 +218,8 @@ label[for="num-people"] {
     margin-bottom: 27px;
 }
 
-.card__tip_amount-title h2, 
-.card__total-title h2 {
+.card__tip_amount-title h1, 
+.card__total-title h1 {
     font-size: 16px;
     font-weight: 500;
     margin-top: 2px;
