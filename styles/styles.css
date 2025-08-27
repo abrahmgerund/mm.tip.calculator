@@ -1,0 +1,344 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Space Mono', sans-serif;
+    background-color: var(--grey-200);
+    scrollbar-gutter: stable;
+}
+
+:root {
+    --green-400: hsl(172, 67%, 45%);
+    --green-900: hsl(183, 100%, 15%);
+    --grey-500: hsl(186, 14%, 43%);
+    --grey-400: hsl(184, 14%, 56%);
+    --grey-200: hsl(185, 41%, 84%);
+    --grey-50: hsl(189, 47%, 97%);
+    --white: hsl(0, 100%, 100%);
+}
+
+
+.section-container {
+    margin: 163px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-container > img{
+    margin-bottom: 87px;
+}
+
+.section {
+    max-width: 920px;
+    width: 100%;
+}
+
+.card {
+    /* max-width: 920px; */
+    width: 100%;
+    background: white;
+    box-shadow: 0.1px 0.1px 1px 1px rgb(0,0,0,0.1);
+    border-radius: 25px;
+    padding: 30px;
+    display: flex;
+    gap: 32px;
+}
+
+.card__calc {
+    padding: 15px 18px;
+    padding-right: 13px;
+    width: 50%;
+}
+
+label[for="bill"] {
+    display: block;
+    color: var(--grey-500);
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+#bill {
+    width: 100%;
+    border: none;
+    background: var(--grey-50) url('../images/icon-dollar.svg') no-repeat left 19px center;
+    border-radius: 5px;
+    padding: 6px 17px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--green-900);
+    text-align: right;
+    font-family: 'Space Mono', sans-serif;
+    outline: none;
+}
+
+#bill:focus {
+    outline: none;
+    border: 2px solid var(--green-400);
+    padding: 4px 15px;
+    background: var(--grey-50) url('../images/icon-dollar.svg') no-repeat left 17px center;
+}
+
+label[for="tip-percent"] {
+    display: block;
+    color: var(--grey-500);
+    font-weight: 700;
+    margin-bottom: 16px;
+    margin-top: 40px;
+}
+
+.card__radio-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 16px 14px;
+}
+
+.card__radio-wrapper input {
+    display: none;
+}
+
+.card__radio-wrapper label {
+    background-color: var(--green-900);
+    padding: 6px;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.card__radio-wrapper label:hover {
+    background-color: #9fe8df;
+    color: var(--green-900);
+    font-weight: 700;
+}
+
+input[type="radio"]:checked + label {
+    background-color: var(--green-400);
+    color: var(--green-900);
+    font-weight: 700;
+}
+
+label[for="custom"] {
+    display: block;
+    width: 100%;
+    background-color: var(--grey-50);
+    padding: 6px;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--grey-500);
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+label[for="custom"]:hover {
+    background-color: hsl(190, 64%, 92%);
+}
+
+input#custom:checked + label[for="custom"] {
+    display: none;
+}
+
+input#custom:checked ~ input#tip-percent {
+    display: block;
+    padding: 6px 7px;
+    font-size: 24px;
+    font-weight: 700;
+    width: 100%;
+    text-align: right;
+    color: var(--green-900);
+    border-radius: 5px;
+    background-color: var(--grey-50);
+    border: none;
+    outline: none;
+}
+
+input#custom:checked ~ input#tip-percent:focus {
+    border: 2px solid var(--green-400);
+    padding: 4px 5px;
+}
+
+label[for="num-people"] {
+    display: block;
+    color: var(--grey-500);
+    font-weight: 700;
+    margin-bottom: 6px;
+    margin-top: 40px;
+}
+
+#num-people {
+    width: 100%;
+    border: none;
+    background: var(--grey-50) url('../images/icon-person.svg') no-repeat left 17px center;
+    border-radius: 5px;
+    padding: 6px 17px;
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--green-900);
+    text-align: right;
+    font-family: 'Space Mono', sans-serif;
+    outline: none;
+    margin-bottom: 4px;
+}
+
+#num-people:focus {
+    outline: none;
+    border: 2px solid var(--green-400);
+    padding: 4px 15px;
+    background: var(--grey-50) url('../images/icon-person.svg') no-repeat left 15px center;
+}
+
+.card__results {
+    background-color: var(--green-900);
+    width: 50%;
+    border-radius: 15px;
+    margin: 2px;
+    margin-left: 3px;
+    padding: 40px;
+}
+
+.card__tip_amount, 
+.card__total {
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__tip_amount {
+    margin-top: 2px;
+    margin-bottom: 27px;
+}
+
+.card__tip_amount-title h2, 
+.card__total-title h2 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.card__tip_amount-title p,
+.card__total-title p {
+    font-size: 13px;
+    color: var(--grey-400);
+}
+
+.card__tip_amount-number, 
+.card__total-number {
+    font-size: 46px;
+    color: var(--green-400);
+    font-weight: 700;
+}
+
+.reset-btn {
+    width: 100%;
+    border: none;
+    background-color: #0d686d;
+    color: #025960;
+    font-size: 19.5px;
+    font-weight: 700;
+    padding: 11px 2px 7px 0;
+    border-radius: 5px;
+    margin-top: 122px;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    font-family: 'Space Mono', sans-serif;
+    /* display: flex;
+    justify-content: center; */
+}
+
+
+.reset-btn.active {
+    background-color: var(--green-400);
+    color: var(--green-900);
+    transition: 0.2s ease;
+}
+
+.reset-btn.active:hover {
+    background-color: #9fe8df;
+}
+
+
+/* Errors */
+
+.bill-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.select_tip-wrapper, 
+.num-people-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.§_tip-wrapper div, 
+.num-people-wrapper div {
+    padding-top: 40px;
+}
+
+.value-error {
+    display: none;
+}
+
+.value-error.active {
+    display: block;
+    font-weight: 700;
+    color: #c37863;
+}
+
+#bill.error-active {
+    border: 2px solid #c37863;
+    padding: 4px 15px;
+    background: var(--grey-50) url('../images/icon-dollar.svg') no-repeat left 17px center;
+}
+
+#num-people.error-active {
+    border: 2px solid #c37863;
+    padding: 4px 15px;
+    background: var(--grey-50) url('../images/icon-person.svg') no-repeat left 15px center;
+}
+
+input#custom:checked ~ input#tip-percent.error-active {
+    border: 2px solid #c37863;
+}
+
+
+@media (max-width: 768px) {
+    html, body {
+        scrollbar-gutter: auto;
+    }
+
+    .section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 97%;
+    }
+
+    .card__calc {
+        padding: 15px 18px;
+        padding-right: 13px;
+        width: 100%;
+    }
+
+    .card__results {
+        width: 100%;
+    }
+
+    #reset-btn {
+        margin-top: 40px;
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/styles.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<main>
+  <div class="section-container">
+    <img src="./images/logo.svg" alt="logo">
+    <section class="section">
+      <div class="card">
+        <div class="card__calc">
+          <div class="bill-wrapper">
+            <label for="bill">Bill</label>
+            <p class="value-error">Enter Valid Value</p>
+          </div>
+          <input type="text" inputmode="numeric" name="bill" id="bill">
+          <div class="select_tip-wrapper">
+            <label for="tip-percent">Select Tip %</label>
+            <div class="value-error">Enter Valid Value</div>
+          </div>
+            <div class="card__radio-wrapper">
+              <input type="radio" id="5percent" name="percent" data-percent="5">
+              <label for="5percent" class="percents">5%</label>
+              <input type="radio" id="10percent" name="percent" data-percent="10">
+              <label for="10percent" class="percents">10%</label>
+              <input type="radio" id="15percent" name="percent" data-percent="15">
+              <label for="15percent" class="percents">15%</label>
+              <input type="radio" id="25percent" name="percent" data-percent="25">
+              <label for="25percent" class="percents">25%</label>
+              <input type="radio" id="50percent" name="percent" data-percent="50">
+              <label for="50percent" class="percents">50%</label>
+              <input type="radio" id="custom" name="percent">
+              <label for="custom" class="percents">Custom</label>
+              <input type="text" inputmode="numeric" name="custom" id="tip-percent" class="">
+              <!-- <div class="custom" class="percents">
+                Custom
+                <input type="number" id="custom">
+              </div> -->
+            </div>
+          <div class="num-people-wrapper">
+            <label for="num-people">Number of People</label>
+            <div class="value-error">Enter Valid Value</div>
+          </div>
+          <input type="text" inputmode="numeric" id="num-people">
+        </div>
+        <div class="card__results">
+          <div class="card__tip_amount">
+            <div class="card__tip_amount-title">
+              <h2>Tip Amount</h2>
+              <p>/ person</p>
+            </div>
+            <div class="card__tip_amount-number">$0.00</div>  
+          </div>
+          <div class="card__total">
+            <div class="card__total-title">
+              <h2>Total</h2>
+              <p>/ person</p>
+            </div>
+            <div class="card__total-number">$0.00</div>  
+          </div>
+          <button id="reset-btn" class="reset-btn">RESET</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+
+
+<!-- 
+  Bill
+
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+
+  Number of People
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset -->
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name</a>.
+  </footer>
+
+  <script src="./script/script.js"></script>
+</body>
+</html>
