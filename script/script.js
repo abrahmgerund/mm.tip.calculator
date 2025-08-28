@@ -15,7 +15,7 @@ const validateInput = function (e) {
     label.nextElementSibling.classList.remove('active');
     input.classList.remove('error-active');
 
-    if (e.target.value !== '' && !/^\d+$/.test(e.target.value)) {
+    if (e.target.value !== '' && !/^\d+(\.\d+)?$/.test(e.target.value)) {
         label.nextElementSibling.classList.add('active');
         input.classList.add('error-active');
     } 
