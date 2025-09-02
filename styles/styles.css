@@ -341,4 +341,8 @@ input#custom:checked ~ input#tip-percent.error-active {
     #reset-btn {
         margin-top: 40px;
     }
+
+    .card__radio-wrapper {
+        grid-template-columns: 1fr 1fr; 
+    }
 }
